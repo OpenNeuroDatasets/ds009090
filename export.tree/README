@@ -1,0 +1,35 @@
+# AL1 multimodal EEG-fMRI dataset
+
+BRILLIANCE_AL1 EEG-fMRI dataset (visit 1), 34 participants
+
+## Contents
+- anat: defaced T1-weighted images (PyDeface 2.1.0 + FSL FLIRT 6.0).
+  Only face voxels were zeroed/attenuated; brain voxels are untouched
+  (verified against SPM12 unified-segmentation brain masks: 0 brain voxels
+  changed in every subject). Images are defaced, not fully de-identified
+  (ears and partial orbits remain).
+- func: multiband BOLD, runs 1-2. RepetitionTime = 1300ms.
+- eeg: EGI MFF recordings (.mff directories). MFF is not an accepted BIDS
+  raw EEG format, so these are listed in .bidsignore and shared unmodified
+  (except as noted under "EEG notes" for sub-034).
+- derivatives/spm12-realign: SPM12 realignment parameters (rp_*.txt) for
+  each BOLD run, where available.
+- sourcedata/recall: per-participant EPRIME stimuli presentation log files (List A for visit 1) 
+
+## Known missing data
+- sub-007: T1 and recall file need to be refetched
+- sub-049, sub-054: no realignment parameters (refetch)
+- No DWI included (refetch later- talk to PK and confirm the final slurmjobdwis?).
+
+## EEG notes
+- sub-034: the source MFF package contained a redundant embedded copy of
+  itself (an EGI re-save artifact). The embedded copy was verified to be a
+  byte-identical duplicate of the outer recording (identical signal data
+  and metadata; event file differing only in XML serialization) and was
+  removed from this release. The outer recording is complete and unaltered.
+- sub-055: the MFF package is an EEGLAB re-export. Its event markers are in
+  Events_exported_from_EEGLAB_2.xml and Events_exported_from_EEGLAB_3.xml
+  rather than the ECI event-track file present for other participants, and
+  acquisition-software files (e.g., recordingSettings.xml) are absent.
+
+last edited 2026-11-09 by CH
