@@ -1,0 +1,3 @@
+# EGI MFF is not an accepted BIDS raw EEG format; shared as-is.
+**/*.mff
+**/*.mff/**

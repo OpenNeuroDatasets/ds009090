@@ -1,0 +1,8 @@
+{
+  "Name": "AL1 multimodal EEG-fMRI dataset (defaced)",
+  "BIDSVersion": "1.10.0",
+  "DatasetType": "raw",
+  "Authors": [
+    "Katherine Aboud"
+  ]
+}
