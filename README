@@ -1,6 +1,6 @@
 # AL1 multimodal EEG-fMRI dataset
 
-BRILLINACE_AL1 EEG-fMRI dataset (visit 1), 34 participants, prepared for NITRC.
+BRILLIANCE_AL1 EEG-fMRI dataset (visit 1), 34 participants
 
 ## Contents
 - anat: defaced T1-weighted images (PyDeface 2.1.0 + FSL FLIRT 6.0).
@@ -8,8 +8,7 @@ BRILLINACE_AL1 EEG-fMRI dataset (visit 1), 34 participants, prepared for NITRC.
   (verified against SPM12 unified-segmentation brain masks: 0 brain voxels
   changed in every subject). Images are defaced, not fully de-identified
   (ears and partial orbits remain).
-- func: multiband BOLD, task "reading", runs 1-2 (sub-103/104 have extra
-  acquisitions not included). RepetitionTime = 1300ms.
+- func: multiband BOLD, runs 1-2. RepetitionTime = 1300ms.
 - eeg: EGI MFF recordings (.mff directories). MFF is not an accepted BIDS
   raw EEG format, so these are listed in .bidsignore and shared unmodified
   (except as noted under "EEG notes" for sub-034).
